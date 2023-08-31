@@ -27,7 +27,7 @@ func main() {
 	var hex_two_bytes []string
 	var addr_all_groups []string
 	hex_two_bytes = append(hex_two_bytes, hex_first_byte)
-	var hex_byte string = hexmanip.Generate_hex(15)
+	var hex_byte string = hexmanip.Generate_hex(255)
 	hex_two_bytes = append(hex_two_bytes, hex_byte)
 	var hex_two_byte_str string = strings.Join(hex_two_bytes, "")
 	addr_all_groups = append(addr_all_groups, hex_two_byte_str)
