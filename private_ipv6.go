@@ -9,8 +9,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/guydavies/hexmanip"
 	"strings"
+
+	"github.com/guydavies/hexmanip"
 )
 
 func main() {
@@ -21,18 +22,18 @@ func main() {
 	//
 	// Then iterate three times to construct three more random hex blocks of 4
 	// hex digits (two bytes) each
-	var hex_digits_per_group int = 4
+	var max_hex_value_as_int int = 65535
 	var hex_first_byte string = "fd"
 	var hex_two_bytes []string
 	var addr_all_groups []string
 	hex_two_bytes = append(hex_two_bytes, hex_first_byte)
-	var hex_byte string = hexmanip.Generate_hex(2)
+	var hex_byte string = hexmanip.Generate_hex(15)
 	hex_two_bytes = append(hex_two_bytes, hex_byte)
 	var hex_two_byte_str string = strings.Join(hex_two_bytes, "")
 	addr_all_groups = append(addr_all_groups, hex_two_byte_str)
 
 	for i := 0; i < 3; i++ {
-		addr_all_groups = append(addr_all_groups, hexmanip.Generate_hex(hex_digits_per_group))
+		addr_all_groups = append(addr_all_groups, hexmanip.Generate_hex(max_hex_value_as_int))
 	}
 
 	addr_all_groups = append(addr_all_groups, ":/64")
